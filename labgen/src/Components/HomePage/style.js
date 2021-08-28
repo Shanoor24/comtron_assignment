@@ -20,6 +20,9 @@ export const useStyles = makeStyles((theme) => ({
         borderRadius : "0.5em",
         height: "700px",
         width : "1130px"
+    },
+    search_cont : {
+        
     }
   }));
 

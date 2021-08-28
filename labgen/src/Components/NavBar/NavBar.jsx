@@ -32,7 +32,7 @@ function NavBar() {
                       User Name
                     </Typography>
                     <Typography component="div" className={classes.down_arrow} style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, cursor:"pointer"}} onClick={handleArrow}>
-                      {arrow ? "▲" : "▼"}
+                      {arrow ? "▼" : "▲"}
                     </Typography>
                 </Typography>
                 {arrow && <Typography component="div" className={classes.user_el_cont} style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, cursor:"pointer", position: "absolute"}}>
