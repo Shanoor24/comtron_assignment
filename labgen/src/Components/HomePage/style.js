@@ -22,7 +22,21 @@ export const useStyles = makeStyles((theme) => ({
         width : "1130px"
     },
     search_cont : {
-        
+        width: "806px",
+        display: "flex",
+        padding: "24px 30px 20px 30px",
+        backgroundColor: "#FFFFFF",
+        borderRadius: "2em",
+        marginTop: "100px",
+        marginLeft: "125px",
+        boxSizing: "border-box"
+    },
+    search_input: {
+        border: "none",
+        color: "#000000",
+        fontSize: "17px",
+        fontWeight: "500",
+        width: "700px"
     }
   }));
 
