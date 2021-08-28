@@ -6,13 +6,14 @@ export const useStyles = makeStyles((theme) => ({
       flexGrow: 1,
     },
     menubar_cont: {
-        border: "1px solid red",
-        height: "80px"
+        border: "1px solid #B7DDF9",
+        height: "75px",
+        backgroundColor: "#B7DDF9"
     },
     menubar_subcont: {
         display: "flex",
         marginLeft: "110px",
-        marginTop: "35px",
+        marginTop: "30px",
         // border: "1px solid red",
         height: "42px"
     },
