@@ -64,11 +64,11 @@ export const useStyles = makeStyles((theme) => ({
     user_el_cont: {
         border: "1px solid grey",
         width:"17.8490vw",
-        height: "70px",
-        marginLeft: "1201.5px",
-        marginTop: "138px",
+        height: "9.695290858725762vh",
+        marginLeft: "78.22265625vw",
+        marginTop: "19.113573407202217vh",
         backgroundColor: '#cfe8fc',
-        padding : "10px 15px 10px 25px",
+        padding : "1.3850415512465375vh 0.9765625vw 1.3850415512465375vh 1.6276041666666667vw",
         boxSizing: "border-box",
         color: "#000000",
         fontWeight: "700",
@@ -78,7 +78,7 @@ export const useStyles = makeStyles((theme) => ({
         // paddingLeft: "20px",
         color: "#000000",
         fontWeight: "600",
-        marginBottom: "5px",
+        marginBottom: "0.6925207756232687vh",
         borderRadius: "0.3em"
     }
 
