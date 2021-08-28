@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
         paddingLeft: "15px",
         marginLeft: "0px",
         borderRadius : "0.5em",
-        height: "700px",
+        height: "750px",
         overflow: "auto",
         '&::-webkit-scrollbar': {
             width : "5px",
