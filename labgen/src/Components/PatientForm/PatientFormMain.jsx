@@ -226,7 +226,7 @@ function PatientForm() {
                                         {/* {console.log(formik.values)} */}
                                         <Form>
                                         <h1 style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontSize:"25px", fontWeight:"500", marginTop:"40px", textDecoration:"underline"}}>Addition Information</h1>
-                                        <TextArea label="Prescription" value={formik.values.additionInformation} name="prescription" type="text" placeholder="Addition Information..."/>
+                                        <TextArea label="Addition Information" value={formik.values.additionInformation} name="additionInformation" type="text" placeholder="Addition Information..."/>
                                         <Container style={{display: "flex", border: "0px solid red", justifyContent:"space-between", width:"200px", marginLeft:"575px", marginTop:"20px"}}>
                                         <Button size="small" variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}} onClick={handleThreeBack}>Back</Button>
                                         <Button size="small" variant="contained" onClick={() => handleFinalSubmit(formik.values)} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Submit </Button>
