@@ -13,9 +13,18 @@ function ChartMain() {
             <Container maxWidth="xl" className={classes.main_cont}>
                 <SideBar />
                 <Container maxWidth="lg" className={classes.right_cont}>
-                    <Pie >
-
-                    </Pie>
+                    <div style={{width:"600px", margin:"auto", marginTop: "100px"}}>
+                        <Pie 
+                            data={{
+                                labels:["Adjustments", "Charge Amount", "Expected Amount", "Billed Amount"],
+                                datasets:[{
+                                    data:[200, 900, 700, 350],
+                                    backgroundColor:["#FF4069", "#36A2EB", "#22CFCF", "#FFC234"]
+                                }]
+                            }}
+                        >
+                        </Pie>
+                    </div>
                 </Container>
             </Container>
         </div>
