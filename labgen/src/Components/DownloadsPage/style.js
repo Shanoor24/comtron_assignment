@@ -20,6 +20,12 @@ export const useStyles = makeStyles((theme) => ({
         borderRadius : "1em",
         height: "750px",
         width : "1130px"
+    },
+    bg_color1: {
+        backgroundColor: "#84C0E6"
+    },
+    bg_color2: {
+        backgroundColor: "#A5E8C0"
     }
   }));
 
