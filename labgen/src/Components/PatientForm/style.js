@@ -59,12 +59,30 @@ export const useStyles = makeStyles((theme) => ({
         fontWeight: "700",
         color: "#FFFFFF"
     },
+    filled_round: {
+        width: "25px",
+        height: "25px",
+        border: "5px solid #D6FF8C",
+        borderRadius: "1.5em",
+        fontSize: "17px",
+        fontWeight: "700",
+        color: "#FFFFFF",
+        backgroundColor: "#D6FF8C"
+    },
     empty_bar: {
         width: "320px",
         height: "5px",
         borderBottom: "4px dashed #B1B8C0",
         marginLeft: "5px",
         marginTop: "10px"
+    },
+    filled_bar: {
+        width: "315px",
+        height: "5px",
+        borderBottom: "4px dashed #D6FF8C",
+        marginLeft: "5px",
+        marginTop: "10px",
+        marginRight: "5px"
     },
     empty_circle: {
         width: "20px",
@@ -87,6 +105,21 @@ export const useStyles = makeStyles((theme) => ({
         marginTop: "20px",
         backgroundColor: "#B1FFA4",
         padding: "0"
+    },
+    input_cont: {
+        border: "2px solid #000000",
+        padding: "10px 20px 10px 20px",
+        borderRadius: "1em",
+        boxSizing: "border-box",
+        marginTop: "25px",
+        marginLeft: "20px"
+    },
+    error: {
+        position:"absolute", 
+        fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, 
+        fontSize:"10px", color:"red",
+        marginTop:"15px",
+        fontWeight:"500"
     }
   }));
 

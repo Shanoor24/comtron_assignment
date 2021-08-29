@@ -43,7 +43,7 @@ function HomeMain() {
 
     return (
         <div>
-            <MenuBar />
+            {/* <MenuBar /> */}
             <Container maxWidth="xl" className={classes.main_cont}>
                 <SideBar />
                 <Container maxWidth="lg" className={classes.right_cont}>
