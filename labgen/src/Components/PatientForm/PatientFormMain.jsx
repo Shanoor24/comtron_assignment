@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import MenuBar from "../MenuBar/MenuBar";
-import { Container, Typography } from '@material-ui/core';
+import { Container, Typography , FormControlLabel, Checkbox} from '@material-ui/core';
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
 import { Input } from '@material-ui/core';
+import {Formik, Form} from "formik";
 
 
 function PatientForm() {
@@ -25,7 +26,35 @@ function PatientForm() {
                             <Typography className={classes.empty_circle} style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`}}>3</Typography>
                         </Container>
                         <Container className={classes.details_cont}>
-                            
+                            <Formik initialvalues={{
+                                firstName: "",
+                                first: "",
+                                second: ""
+                            }}>
+                                {formik => (
+                                    <Form>
+                                        {console.log(formik)}
+                                    <Container  style={{display: "flex"}}>
+                                        <Typography>
+                                            <Input type="text" />
+                                        </Typography>
+                                        <FormControlLabel
+                                            value="end"
+                                            control={<Checkbox color="primary" />}
+                                            label="End"
+                                            labelPlacement="end"
+                                            />
+                                        <FormControlLabel
+                                            value="end"
+                                            control={<Checkbox color="primary" />}
+                                            label="End"
+                                            labelPlacement="end"
+                                            />
+                                        {/* <input type="checkbox" /> */}
+                                    </Container>
+                                </Form>
+                                )}  
+                            </Formik>
                         </Container>
                     </Container>
                 </Container>
