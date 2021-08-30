@@ -3,7 +3,9 @@ import { Container, Grid, Paper, Button, Typography, Input, FormControl, Select,
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
 import { getData } from "../../Redux/Downloads/action";
-import {useDispatch, useSelector} from "react-redux"
+import {useDispatch, useSelector} from "react-redux";
+import jsPDF from "jspdf";
+
 
 function DownloadMain() {
     const dispatch = useDispatch();
@@ -42,6 +44,8 @@ function DownloadMain() {
     const handlePagePrev = () => {
         setPage((prev) => prev - 1)
     }
+
+    const handle
 
 
     useEffect(() => {
