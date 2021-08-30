@@ -1,6 +1,6 @@
 # comtron_assignment
 
-## Tech Stack Used
+## Tech stack used in this project
 1. React
 2. Redux
 3. Material UI
