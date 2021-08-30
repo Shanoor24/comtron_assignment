@@ -1,13 +1,16 @@
-import React, { useState } from "react";
-import MenuBar from "../MenuBar/MenuBar";
+import React, { useState, useEffect } from "react";
+// import MenuBar from "../MenuBar/MenuBar";
 import { Container, Typography, Grid, Paper} from '@material-ui/core';
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
 import { Input } from '@material-ui/core';
 import { Search } from '@material-ui/icons';
+import { useDispatch } from "react-redux";
+import {getData} from "../../Redux/PatientReg/action"
 
 function HomeMain() {
     const classes = useStyles();
+    const dispatch = useDispatch();
     const [value, setValue] = useState("");
     const [text, setText] = useState("");
 
@@ -39,6 +42,10 @@ function HomeMain() {
         setText("");
     }
 
+
+    useEffect(() => {
+        dispatch(getData());
+    }, [])
 
 
     return (

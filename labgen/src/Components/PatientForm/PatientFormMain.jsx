@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import MenuBar from "../MenuBar/MenuBar";
+// import MenuBar from "../MenuBar/MenuBar";
 import { Container, Typography , Button} from '@material-ui/core';
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
@@ -12,6 +12,8 @@ import { useHistory } from "react-router-dom";
 import { TextArea } from "./TextArea";
 import { TextArea1 } from "./TextArea1";
 import * as Yup from "yup";
+import { useDispatch } from "react-redux";
+import {postData} from "../../Redux/PatientReg/action"
 // import { TextFields } from "@material-ui/icons";
 
 
@@ -20,7 +22,8 @@ import * as Yup from "yup";
 function PatientForm() {
     const classes = useStyles();
     const history = useHistory();
-    const [finalData, setFinalData]= useState({});
+    const dispatch = useDispatch();
+    const [finalData, setFinalData]= useState({id : 3});
     
     const [stepOne, setStepOne] = useState(true);
     const [stepTwo, setStepTwo] = useState(false);
@@ -90,6 +93,7 @@ function PatientForm() {
         // console.log(data);
         // handleSubmit();
         setStepOneData(data);
+        setFinalData({...finalData, ...data});
         setStepOne(false);
         setStepTwo(true);
         setStepThree(false);
@@ -97,6 +101,7 @@ function PatientForm() {
 
     const handleTwoNext = (data) => {
         setStepTwoData(data);
+        setFinalData({...finalData, ...data});
         setStepOne(false);
         setStepTwo(false);
         setStepThree(true);
@@ -104,8 +109,9 @@ function PatientForm() {
 
     const handleFinalSubmit = (data) => {
         setStepThreeData(data);
-        setFinalData({...stepOneData, ...stepTwoData, ...stepThreeData})
-        console.log(finalData);
+        setFinalData({...finalData, ...data});
+        dispatch(postData(finalData));
+        // console.log(finalData);
         setStepOne(true);
         setStepTwo(false);
         setStepThree(false);
@@ -116,12 +122,12 @@ function PatientForm() {
 
     // console.log(stepOneData);
 
-    useEffect(() => {
-        console.log(finalData);
-        console.log(stepOneData);
-        console.log(stepTwoData);
-        console.log(stepThreeData);
-    }, [stepOneData, stepTwoData, stepThreeData, finalData]);
+    // useEffect(() => {
+    //     console.log(finalData);
+    //     console.log(stepOneData);
+    //     console.log(stepTwoData);
+    //     console.log(stepThreeData);
+    // }, [stepOneData, stepTwoData, stepThreeData, finalData]);
     
 
     return (
