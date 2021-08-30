@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grid, Paper, Button, Typography, Input, FormControl, Select, MenuItem} from '@material-ui/core';
+import { Container, Grid, Paper, Button, Typography, Input, FormControl, Select, MenuItem, CircularProgress} from '@material-ui/core';
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
 import { getData } from "../../Redux/Downloads/action";
@@ -10,9 +10,9 @@ function DownloadMain() {
     const classes = useStyles();
     const [limit, setLimit] = useState(7);
     const [page, setPage] = useState(1);
-    const {data} = useSelector((state) => state.downloads);
+    const {data, isLoading} = useSelector((state) => state.downloads);
     const totalLength = data.copyWithin.length;
-    const Previous_page = "<"
+    // const Previous_page = "<"
     const [sortCode, setSortCode] = useState(false);
     const [sortSlNo, setSortSlNo] = useState(false);
     const [sortRef, setSortRef] = useState(false);
@@ -81,7 +81,7 @@ function DownloadMain() {
                     <Grid container spacing={3} style={{width:"900px", margin:"auto", marginTop:"30px", border:"0px solid red", padding:"15px", backgroundColor:"#7FE866", boxSizing: "border-box"}}>
                         <Grid item sm={2} style={{margin:"auto", borderRadius: "1em", border:"0px solid red", padding:"0px"}}>
                             <Paper onClick={handleToggleSlNo} style={{border:"0px solid red", backgroundColor:"#7FE866", fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", fontSize: "25px", cursor: "pointer"}} >
-                               { sortSlNo ? "SL No. ↓" :  "SL No. ↑"}
+                               { sortSlNo ? "ID No. ↓" :  "ID No. ↑"}
                             </Paper>
                         </Grid>
                         <Grid item sm={2} style={{margin:"auto", borderRadius: "1em", padding:"0px",}}>
@@ -100,7 +100,7 @@ function DownloadMain() {
                             </Paper>
                         </Grid>
                     </Grid>
-                    {data.length > 0 && data.map((item, i) => 
+                    {isLoading ? <div style={{width:"900px", height:"250px", border: "0px solid red", margin: "auto", marginTop:"140px",}}><CircularProgress /> </div> : data.length > 0 && data.map((item, i) => 
                         <Grid key={item.id} container spacing={3} className={item.id % 2 === 1 ? classes.bg_color1 : classes.bg_color2} style={{width:"900px", margin:"auto", marginTop:"0px", border:"0px solid red", padding:"12px", boxSizing:"border-box"}}>
                         <Grid item sm={2} className={item.id % 2 === 1 ? classes.bg_color1 : classes.bg_color2} style={{margin:"auto", borderRadius: "1em", border:"0px solid red", padding:"0px"}}>
                             <Paper className={item.id % 2 === 1 ? classes.bg_color1 : classes.bg_color2} style={{border:"0px solid red", fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", fontSize: "22px"}} >

@@ -14,6 +14,7 @@ import { TextArea1 } from "./TextArea1";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
 import {postData} from "../../Redux/PatientReg/action"
+import {v4 as uuid} from "uuid";
 // import { TextFields } from "@material-ui/icons";
 
 
@@ -23,7 +24,7 @@ function PatientForm() {
     const classes = useStyles();
     const history = useHistory();
     const dispatch = useDispatch();
-    const [finalData, setFinalData]= useState({id : 3});
+    const [finalData, setFinalData] = useState({id : uuid()});
     
     const [stepOne, setStepOne] = useState(true);
     const [stepTwo, setStepTwo] = useState(false);
@@ -115,8 +116,8 @@ function PatientForm() {
         setStepOne(true);
         setStepTwo(false);
         setStepThree(false);
-        history.push("/")
-        
+        alert("New patient added successfully!");
+        history.push("/");
     }
 
 
