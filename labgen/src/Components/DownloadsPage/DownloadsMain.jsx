@@ -70,8 +70,8 @@ function DownloadMain() {
                         </Grid>
                     </Grid>
                     )}
-                    <Container>
-
+                    <Container style={{display: "flex", border: "1px solid red"}}>
+                        
                     </Container>
                 </Container>
             </Container>
