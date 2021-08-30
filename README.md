@@ -1,6 +1,6 @@
 # comtron_assignment
 
-## Tech Stack
+## Tech Stack Used
 1. React
 2. Redux
 3. Material UI
