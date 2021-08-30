@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Container, Grid, Paper, Button, Typography} from '@material-ui/core';
+import { Container, Grid, Paper, Button, Typography, Input, FormControl, Select, MenuItem} from '@material-ui/core';
 import {useStyles} from "./style"
 import SideBar from "../SideBar/SideBar";
 import { getData } from "../../Redux/Downloads/action";
@@ -65,10 +65,20 @@ function DownloadMain() {
                 <SideBar />
                 <Container maxWidth="lg" className={classes.right_cont}>
 
-                    <Container style={{display: "flex", border: "0px solid red", width: "900px", margin: "auto", marginTop:"50px"}}>
-                        
+                    <Container style={{display: "flex", border: "0px solid red", width: "900px", margin: "auto", marginTop:"70px", textAlign:"left"}}>
+                        <Typography style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", fontSize: "22px" , marginTop:"0px", marginLeft:"0px"}}>Filter by:</Typography>
+                        <Input placeholder="Search..." style={{marginLeft:"100px"}}></Input>
+                        <FormControl className={classes.formControl} style={{position:"absolute", marginLeft:"450px", marginTop: "-15px"}}>
+                            <Select displayEmpty className={classes.selectEmpty} inputProps={{ 'aria-label': 'Filter' }}>
+                                <MenuItem value={"Filter Select"} disabled> Filter Select </MenuItem>
+                                <MenuItem value={10}>Test A</MenuItem>
+                                <MenuItem value={20}>Test B</MenuItem>
+                                <MenuItem value={30}>Test C</MenuItem>
+                            </Select>
+                        </FormControl>
+                        <Button size="small" disabled variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", borderRadius:"0.5em", backgroundColor:"#BFF5C0", border:"1px solid #80D786", marginLeft: "380px"}}>Filter</Button>
                     </Container>
-                    <Grid container spacing={3} style={{width:"900px", margin:"auto", marginTop:"20px", border:"0px solid red", padding:"15px", backgroundColor:"#7FE866", boxSizing: "border-box"}}>
+                    <Grid container spacing={3} style={{width:"900px", margin:"auto", marginTop:"30px", border:"0px solid red", padding:"15px", backgroundColor:"#7FE866", boxSizing: "border-box"}}>
                         <Grid item sm={2} style={{margin:"auto", borderRadius: "1em", border:"0px solid red", padding:"0px"}}>
                             <Paper onClick={handleToggleSlNo} style={{border:"0px solid red", backgroundColor:"#7FE866", fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", fontSize: "25px", cursor: "pointer"}} >
                                { sortSlNo ? "SL No. ↓" :  "SL No. ↑"}

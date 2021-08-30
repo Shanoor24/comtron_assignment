@@ -26,6 +26,13 @@ export const useStyles = makeStyles((theme) => ({
     },
     bg_color2: {
         backgroundColor: "#A5E8C0"
-    }
+    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+      },
+      selectEmpty: {
+        marginTop: theme.spacing(2),
+      },
   }));
 
