@@ -5,6 +5,10 @@ import SideBar from "../SideBar/SideBar";
 import { getData } from "../../Redux/Downloads/action";
 import {useDispatch, useSelector} from "react-redux";
 import jsPDF from "jspdf";
+import image1 from  "../../Images/download.png"
+import image2 from  "../../Images/download1.png"
+import image3 from  "../../Images/download2.png"
+import image4 from  "../../Images/download3.png"
 
 
 function DownloadMain() {
@@ -45,7 +49,14 @@ function DownloadMain() {
         setPage((prev) => prev - 1)
     }
 
-    const handle
+    
+
+    const handlePdfGenerator = () => {
+        let image = (sortSlNo || sortCode || sortRef) && (page === 1) ? image3 :  (sortSlNo || sortCode || sortRef) && (page === 2) ? image4 : page === 1 ? image1 : image2;
+        let doc = new jsPDF("landscape", "px", "a4", "false");
+        doc.addImage(image, "PNG", 65, 20, 500, 400);
+        doc.save("download.pdf")
+    }
 
 
     useEffect(() => {
@@ -129,7 +140,7 @@ function DownloadMain() {
                     </Grid>
                     )}
                     <Container style={{display: "flex", border: "0px solid red", width: "900px", margin: "auto", marginTop:"50px"}}>
-                        <Button size="small" variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", borderRadius:"0.5em", backgroundColor:"#BFF5C0", border:"1px solid #80D786"}}>Download</Button>
+                        <Button size="small" onClick={handlePdfGenerator} variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", borderRadius:"0.5em", backgroundColor:"#BFF5C0", border:"1px solid #80D786"}}>Download</Button>
                         <Typography style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", marginTop:"4px", marginLeft:"385px"}}>Rows per page: 7</Typography>
                         <Typography style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", marginTop:"4px", marginLeft:"60px"}}>{`${page}-${totalLength} of ${totalLength}`}</Typography>
                         <Button disabled={page===1} variant="contained" onClick={handlePagePrev} style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500", maxWidth: '30px', maxHeight: '30px', minWidth: '30px', minHeight: '30px', marginLeft:"40px", marginRight:"7px"}}>◄</Button>
