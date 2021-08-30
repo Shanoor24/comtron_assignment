@@ -184,7 +184,7 @@ function PatientForm() {
                                         </Container>
                                         <Container style={{display: "flex", border: "0px solid red", justifyContent:"space-between", width:"200px", marginLeft:"575px", marginTop:"20px"}}>
                                         <Button size="small" variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}} onClick={handleCancel}>Cancel</Button>
-                                        <Button size="small" variant="contained" onClick={() => handleOneNext(formik.values)} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Next </Button>
+                                        <Button size="small" variant="contained" onClick={ formik.values.gender ? () => handleOneNext(formik.values) : ""} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Next </Button>
                                         </Container>
                                     </Form>
                                 </div>
@@ -210,7 +210,7 @@ function PatientForm() {
                                         <TextArea label="Prescription" value={formik.values.prescription} name="prescription" type="text" placeholder="Add prescription..."/>
                                         <Container style={{display: "flex", border: "0px solid red", justifyContent:"space-between", width:"200px", marginLeft:"575px", marginTop:"20px"}}>
                                         <Button size="small" variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}} onClick={handleTwoBack}>Back</Button>
-                                        <Button size="small" variant="contained" onClick={() => handleTwoNext(formik.values)} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Next </Button>
+                                        <Button size="small" variant="contained" onClick={ formik.values.prescription ? () => handleTwoNext(formik.values) : ""} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Next </Button>
                                         </Container>
                                     </Form>
                                 </div>
@@ -237,7 +237,7 @@ function PatientForm() {
                                         <TextArea1 label="Addition Information" value={formik.values.additionInformation} name="additionInformation" type="text" placeholder="Addition Information..."/>
                                         <Container style={{display: "flex", border: "0px solid red", justifyContent:"space-between", width:"200px", marginLeft:"575px", marginTop:"20px"}}>
                                         <Button size="small" variant="contained" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}} onClick={handleThreeBack}>Back</Button>
-                                        <Button size="small" variant="contained" onClick={() => handleFinalSubmit(formik.values)} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Submit </Button>
+                                        <Button size="small" variant="contained" onClick={ formik.values.additionInformation ? () => handleFinalSubmit(formik.values) : ""} color="primary" style={{fontFamily: `"M PLUS Rounded 1c", "sans-serif"`, fontWeight:"500"}}> Submit </Button>
                                         </Container>
                                     </Form>
                                 </div>
