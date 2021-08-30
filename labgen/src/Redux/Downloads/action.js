@@ -25,7 +25,7 @@ const getDataFailure = (error) => {
     }
 }
 
-const getData = (page, limit) => (dispatch) => {
+const getData = (page, limit, sort, order) => (dispatch) => {
     dispatch(getDataRequest())
 
     const config = {
@@ -33,7 +33,9 @@ const getData = (page, limit) => (dispatch) => {
         method : "get",
         params : {
             _page : page,
-            _limit: limit
+            _limit: limit,
+            _sort: sort,
+            _order: order
         }
     }
 
