@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router";
 import ChartMain from "../Components/ChartsPage/ChartMain";
+import SettingMain from "../Components/SettingsPage/SettingPage";
 import DownloadMain from "../Components/DownloadsPage/DownloadsMain";
 import HomeMain from "../Components/HomePage/HomeMain";
 import MenuBar from "../Components/MenuBar/MenuBar";
@@ -18,6 +19,10 @@ function Routes() {
                     <HomeMain />
                 </Route>
 
+                <Route path="/settings" exact>
+                    <SettingMain />
+                </Route>
+
                 <Route path="/charts" exact>
                     <ChartMain />
                 </Route>
@@ -29,6 +34,8 @@ function Routes() {
                 <Route path="/newPatientEntry" exact>
                     <PatientForm />
                 </Route>
+
+                
             </Switch>
         </div>
     );
